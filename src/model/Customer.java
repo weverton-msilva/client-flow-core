@@ -5,20 +5,18 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class Customer {
-    private UUID id;
+    private final UUID id;
     private String name;
     private String email;
-    private String document;
     private String phone;
     private boolean active;
     private BigDecimal revenue;
     private final LocalDateTime createdAt;
 
-    public Customer(UUID id, String name, String email, String document, String phone, boolean active, BigDecimal revenue, LocalDateTime createdAt) {
+    public Customer(UUID id, String name, String email, String phone, boolean active, BigDecimal revenue, LocalDateTime createdAt) {
         this.id = UUID.randomUUID();
         this.name = name;
         this.email = email;
-        this.document = document;
         this.phone = phone;
         this.active = true;
         this.revenue = revenue;
@@ -32,9 +30,6 @@ public class Customer {
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
-
-    public String getDocument() { return document; }
-    public void setDocument(String document) { this.document = document; }
 
     public String getPhone() { return phone; }
     public void setPhone(String phone) { this.phone = phone; }
@@ -53,7 +48,6 @@ public class Customer {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
-                ", document='" + document + '\'' +
                 ", phone='" + phone + '\'' +
                 ", active=" + active +
                 ", revenue=" + revenue +
