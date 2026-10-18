@@ -23,7 +23,7 @@ public class Customer {
         this.createdAt = LocalDateTime.now();
     }
 
-    public UUID getId() { return id; }
+    public Customer getId() { return id; }
 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }

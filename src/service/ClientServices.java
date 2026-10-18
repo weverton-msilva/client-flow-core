@@ -43,4 +43,25 @@ public class ClientServices {
 
         }
     }
+
+    // Função para deletar conta criada
+    public static void deleteClient(Scanner scanner) {
+        System.out.print("ID do usuário (UUID): ");
+        String idStr = scanner.nextLine();
+
+        try {
+            UUID id = UUID.fromString(idStr);
+
+            // Chama o método seguro do clientStore
+            boolean removed = clientStore.removeCustomer(id);
+
+            if (removed) {
+                System.out.println("Cliente deletado com sucesso!");
+            } else {
+                System.out.println("Nenhum cliente encontrado com este ID.");
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro: O ID digitado não está em um formato de UUID válido.");
+        }
+    }
 }

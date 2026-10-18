@@ -8,7 +8,7 @@ public class Menu {
     public static void optionsMenu(Scanner scanner) {
         int choice = 0;
 
-        while (choice != 5) {
+        while (choice != 4) {
             showMenu();
 
             // Verificação e correção da opção informada
@@ -20,7 +20,8 @@ public class Menu {
                 switch (choice) {
                     case 1 -> ClientServices.registerCustomer(scanner);
                     case 2 -> ClientServices.listCustomers();
-                    case 5 -> {
+                    case 3 -> ClientServices.deleteClient(scanner);
+                    case 4 -> {
                         System.out.println("✌️ Fechando Programa!");
                         break;
                     }
@@ -44,8 +45,7 @@ public class Menu {
 
         System.out.println("\n1. Novo Cliente");
         System.out.println("2. Listar Clientes");
-        System.out.println("3. Editar Informações");
-        System.out.println("4. Excluir Cliente");
-        System.out.println("5. Sair do Programa");
+        System.out.println("3. Excluir Cliente");
+        System.out.println("4. Sair do Programa");
     }
 }

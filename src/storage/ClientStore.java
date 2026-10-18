@@ -5,6 +5,7 @@ import model.Customer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
 
 public class ClientStore {
     private final List<Customer> customerList;
@@ -28,5 +29,13 @@ public class ClientStore {
         if (customer != null) {
             this.customerList.add(customer);
         }
+    }
+
+    // Método para gerenciar e excluir clientes de forma segura
+    public boolean removeCustomer(UUID customerId) {
+        if (customerId != null) {
+            return this.customerList.removeIf(customer -> customer.getId().equals(customerId));
+        }
+        return false;
     }
 }
